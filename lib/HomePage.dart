@@ -139,31 +139,48 @@ class _HomeState extends State<Home> {
 
                   return Card(
                   elevation: 10.0,
-                    child: new Column(
+                    margin: EdgeInsets.all(10.0),
 
-                      children: <Widget>[
+                    child: new Container(
+                      
+                      margin: EdgeInsets.all(10.0),
+          
 
-                        new ClipRRect(
+                      child: new Column(
 
-                          borderRadius: new BorderRadius.circular(10.0),
-                          child: new Image.network(snapshot[index].data["url"],
-                          height: 180.0,
-                            width: 180.0,
-                            fit: BoxFit.cover,
+                        children: <Widget>[
+
+                          new ClipRRect(
+
+                            borderRadius: new BorderRadius.circular(10.0),
+                            child: new Image.network(snapshot[index].data["url"],
+                              height: 180.0,
+                              width: 180.0,
+                              fit: BoxFit.cover,
+
+
+                            ),
+
+
+                          ),
+
+                          new SizedBox( height: 10.0,),
+                          new Text(snapshot[index].data["title"],
+                            style: TextStyle(fontSize: 19.0, color: Colors.purple),
 
 
                           ),
 
 
-                        ),
 
-                        new SizedBox( height: 10.0,),
-                        new Text(snapshot[index].data["title"]),
+                        ],
+                      ),
 
-
-
-                      ],
                     ),
+
+
+
+
 
                   );
                 }
