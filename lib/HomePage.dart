@@ -134,6 +134,7 @@ class _HomeState extends State<Home> {
             child: new ListView.builder(
 
                 itemCount: snapshot.length,
+                scrollDirection: Axis.horizontal,
                 itemBuilder: (context,index){
 
                   return Card(
