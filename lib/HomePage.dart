@@ -148,6 +148,7 @@ class _HomeState extends State<Home> {
                           borderRadius: new BorderRadius.circular(10.0),
                           child: new Image.network(snapshot[index].data["url"],
                           height: 180.0,
+                            width: 180.0,
                             fit: BoxFit.cover,
 
 
