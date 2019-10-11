@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
+import 'package:flutter_app/DetailsPage.dart';
 
 
 class Home extends StatefulWidget {
@@ -46,6 +47,12 @@ class _HomeState extends State<Home> {
 
 
     super.initState();
+  }
+
+  passData(DocumentSnapshot snap){
+
+    Navigator.of(context).push(new MaterialPageRoute(builder:(context)=>DetailsPage(snapshot: snap,)));
+
   }
 
 
@@ -234,9 +241,20 @@ class _HomeState extends State<Home> {
                               ),
 
                               new SizedBox (width: 10.0,),
+
+                              new InkWell(
+
+                                child: new Text(snapshotBody[index].data["title"],
+                                  style: TextStyle(fontSize: 20.0, color: Colors.purple),
+                              ),
+
+                                onTap: (){
+
+                                  passData(snapshotBody[index]);
+
+                                },
                               
-                              new Text(snapshotBody[index].data["title"],
-                                style: TextStyle(fontSize: 20.0, color: Colors.purple),
+
 
                               ),
                             ],
